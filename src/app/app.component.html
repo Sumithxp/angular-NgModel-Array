@@ -1,0 +1,14 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<div>
+  <form name="myForm" #heroForm (ngSubmit)="onSubmit(heroForm)" >
+    <div *ngFor="let item of items; let index=index">
+      <label>{{item.name}}:&nbsp;</label><input name="{{'name'+index}}" (change)="onSubmit()"  type="text" [(ngModel)]="item.name"/>
+      <label>{{item.value}}:&nbsp;</label><input name="{{'value'+index}}" type="text" (change)="onSubmit()" [(ngModel)]="item.value"/>
+    </div>
+    <button type="submit" >Save</button>
+  </form>
+</div>
